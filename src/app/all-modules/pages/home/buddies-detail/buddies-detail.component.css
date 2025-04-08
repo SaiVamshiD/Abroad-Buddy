@@ -1,0 +1,26 @@
+th {
+    color: #4E6E81;
+    padding: 5px;
+}
+
+.btn {
+    width: 550px;
+    border-radius: 0%;
+    width: 60%;
+    background: #4E6E81;
+    border: none;
+}
+
+.profilepicnm {
+    width: 57%;
+    height: 197px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto;
+	margin-bottom:1.5rem !important;
+}
+.profilepicnm img {
+    width: 100%;
+    object-fit: cover;
+    height: 197px;
+}

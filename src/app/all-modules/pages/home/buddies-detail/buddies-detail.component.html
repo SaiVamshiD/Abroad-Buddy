@@ -1,0 +1,93 @@
+<section class="pt-3">
+    <div class="container">
+       <div class="row">
+	     <div class="col-md-12 col-lg-7 m-auto">
+		   <div class="row pt-lg-5">
+	
+            <div class="col-md-6 col-sm-6">
+				<div class="profilepicnm">
+                <img [src]="userDetails?.profile_pic?userDetails?.profile_pic:defaultProfilePic"
+                    alt="">
+				</div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <table class="table">
+                    <tr>
+                        <th>Full Name:</th>
+                        <td> {{((userDetails?.first_name)?(userDetails?.first_name+' '+userDetails?.last_name):(userDetails?.username)) | titlecase}}</td>
+                    </tr>
+                    <tr *ngIf="!isSeller">
+                        <th>Bio:</th>
+                        <td>{{userDetails?.bio}}</td>
+                    </tr>
+                    <tr  *ngIf="!isSeller">
+                        <th>Age:</th>
+                        <td>{{userDetails?.age}}</td>
+                    </tr>
+                    <tr  *ngIf="!isSeller">
+                        <th>Gender:</th>
+                        <td>{{userDetails?.gender}}</td>
+                    </tr>
+                    <tr  *ngIf="!isSeller">
+                        <th>University arriving:</th>
+                        <td>{{userDetails?.university_id}}</td>
+                    </tr>
+                    <tr  *ngIf="!isSeller">
+                        <th>Education Background:</th>
+                        <td>{{userDetails?.Education_Level}}</td>
+                    </tr>
+                    <tr  *ngIf="!isSeller">
+                        <th>Hobbies:</th>
+                        <td>{{userDetails?.Hobbies}}</td>
+                    </tr>
+                    <tr  *ngIf="!isSeller">
+                        <th>Food Preferences:</th>
+                        <td>{{userDetails?.Food_Type}}</td>
+                    </tr>
+                    <tr  *ngIf="!isSeller">
+                        <th>Accomodation Preferences:</th>
+                        <td>{{userDetails?.Room_Sharing}}</td>
+                    </tr>
+                    <tr  *ngIf="!isSeller">
+                        <th>Linkedin Profile:</th>
+                        <td>{{userDetails?.Linkedin}}</td>
+                    </tr>
+                    <tr  *ngIf="!isSeller">
+                        <th>Facebook Profile:</th>
+                        <td>{{userDetails?.Facebook}}</td>
+                    </tr>
+                    <tr  *ngIf="!isSeller">
+                        <th>Twitter Profile:</th>
+                        <td>{{userDetails?.Twitter}}</td>
+                    </tr>
+                    <tr  *ngIf="!isSeller">
+                        <th>Instagram Profile:</th>
+                        <td>{{userDetails?.Instagram}}</td>
+                    </tr>
+                    <tr  *ngIf="isSeller">
+                        <th>Email:</th>
+                        <td>{{userDetails?.email}}</td>
+                    </tr>
+                    <tr  *ngIf="isSeller">
+                        <th>Phone:</th>
+                        <td>{{userDetails?.phone}}</td>
+                    </tr>
+                    <tr  *ngIf="isSeller">
+                        <th>City:</th>
+                        <td>{{userDetails?.city}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+		 </div>
+	   </div>
+        <div class="row pt-lg-5">
+            <div class="col-md-12 col-sm-12 text-center">
+                <button class="btn btn-primary" (click)="chat()" *ngIf="userDetails?.is_connect==3" >Chat Request</button>
+                <button class="btn btn-primary" (click)="chat()" *ngIf="userDetails?.is_connect==1">Let's Chat</button>
+                <button class="btn btn-primary"  *ngIf="userDetails?.is_connect==0">Chat Request Pending</button>
+                <button class="btn btn-primary"  *ngIf="userDetails?.is_connect==2">Chat Request Rejected</button>
+            </div>
+        </div>
+    </div>
+</section>
